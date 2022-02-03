@@ -14,9 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\SobreController;
 
 Route::get('/', [HomeController::class,'index']);
-Route::get('/sobre',[HomeController::class,'sobre']);
-Route::get('/sobre/resumopessoal', [SobreController::class,'resumopessoal']);
-Route::get('/sobre/resumoprofissional', [SobreController::class,'resumoprofissional']);

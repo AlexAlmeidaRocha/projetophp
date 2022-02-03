@@ -11,7 +11,7 @@
                 <a href="/">Home</a>
             </li>
             <li>                
-                <a href="https://www.linkedin.com/in/alex-almeida-24049a213/">Sobre Alex</a>
+                <a href="https://www.linkedin.com/in/alex-almeida-24049a213/"target="_blank">Sobre Alex</a>
             </li>
         </ul>
     </div>   
