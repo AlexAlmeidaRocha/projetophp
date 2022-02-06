@@ -14,7 +14,7 @@ class Pessoa
        $idade = date("Y") - $anoNasc;
        if (date("m") < $mesNasc){
            $idade -= 1;
-       } elseif ( (date("m") == $mesNasc) && (date("d") <= $diaNasc) ){
+       } elseif ( (date("m") == $mesNasc) && (date("d") < $diaNasc) ){
            $idade -= 1;
        }
         return $idade;

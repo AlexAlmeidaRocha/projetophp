@@ -38,12 +38,12 @@
                 <input type="date" id="data_nasciemnto"/>
             </div>
             <div>
-                <label id="resultado2"></label> 
+                <label id="lb_resultado"></label> 
             </div>
         </div>       
     </form>
     <div> 
-        <button id='btn_form2'>Resultado</button>   
+        <button id='btn_buscaridade'>Resultado</button>   
     </div>
 </body>
 </html>
@@ -53,12 +53,12 @@
 <script type="text/javascript">
 
     jQuery(function ($) {        
-        $("#btn_form2").click(function () {
+        $("#btn_buscaridade").click(function () {
             var nome = $("#nome").val();
             var data_nasciemnto = $("#data_nasciemnto").val();
 
-            $.get("/resultado2",{data: data_nasciemnto}, function(data) {
-                $("#resultado2").html("Meu nome é " + nome + ", nasci em " +  moment(data_nasciemnto).format('DD/MM/YYYY') + " e minha idade é " + data + " anos.");
+            $.get("/buscaridade",{data: data_nasciemnto}, function(data) {
+                $("#lb_resultado").html("Meu nome é " + nome + ", nasci em " +  moment(data_nasciemnto).format('DD/MM/YYYY') + " e minha idade é " + data + " anos.");
             });
         });
     });
