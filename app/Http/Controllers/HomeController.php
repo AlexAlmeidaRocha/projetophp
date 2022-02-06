@@ -11,7 +11,7 @@ class HomeController extends Controller
         return view('home');
     } 
 
-    public function resultado2(Request $request){  
+    public function buscaridade(Request $request){  
         $pessoa = new Pessoa();
         $funcname = "CalcularIdade";
         $idade = $pessoa->$funcname($request["data"]);
