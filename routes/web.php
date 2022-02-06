@@ -16,3 +16,4 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class,'index']);
+Route::get('/resultado2', [HomeController::class,'resultado2']);
