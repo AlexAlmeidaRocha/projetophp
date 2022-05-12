@@ -11,39 +11,78 @@
                 <a href="/">Home</a>
             </li>
             <li>                
-                <a href="https://www.linkedin.com/in/alex-almeida-24049a213/" target="blank">Sobre Alex</a>
+                <a href="https://www.linkedin.com/in/alex-almeida-rocha-24049a213/" target="blank">Sobre Alex</a>
             </li>
         </ul>
-    </div>   
+    </div> 
+    <style>
+        ul{
+            list-style: none;
+            text-transform: uppercase;
+            position: absolute;  
+            top: 0px; 
+            left: 50%; 
+            transform: translate(-50%,-50%);
+        }
+        li{
+            display: inline-block;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: whitesmoke;
+            margin: 3px;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: gray;
+        }
+        .tela{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        input{
+            background-color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            color: black;
+            width: 100%;
+        }
+        button{
+            border-radius: 10px;
+            width: 107%;
+            border: none;
+            padding: 14px;
+            background-color: white;
+            color: black;                
+        }
+        button:hover{
+            background-color: blue;
+            cursor: pointer;
+        }
+    </style>  
 </head>
 <body>
-    <div>       
-    <div>
-        <h1>Formulario de Aniversario</h1>
-    </div>
-    <form>
+    <div class="tela">       
         <div>
-            <div>                
-                <label for="title">Informe seu nome:</label>
-            </div>
-            <div>
-                <input type="text" class="from-control" id="nome" name="nome" placeholder="Seu Nome"/>
-            </div>
+            <h1>Formulario de Aniversario</h1>
+        </div>    
+        <div>            
+            <input type="text" class="from-control" id="nome" name="nome" placeholder="Seu Nome"/><br><br>            
         </div> 
+        <div>               
+            <label for="title">Data Nascimento:</label>            
+        </div>
         <div>
-            <div>                
-                <label for="title">Informe a data do seu nascimento:</label>
-            </div>
-            <div>
-                <input type="date" id="data_nasciemnto"/>
-            </div>
-            <div>
-                <label id="lb_resultado"></label> 
-            </div>
-        </div>       
-    </form>
-    <div> 
-        <button id='btn_buscaridade'>Resultado</button>   
+            <input type="date" id="data_nasciemnto"/>                       
+        </div> <br> 
+        <div> 
+            <button id='btn_buscaridade'>Resultado</button>   
+        </div><br><br>
+        <div>
+            <label id="lb_resultado"></label> 
+        </div>
     </div>
 </body>
 </html>
@@ -58,7 +97,7 @@
             var data_nasciemnto = $("#data_nasciemnto").val();
 
             $.get("/buscaridade",{data: data_nasciemnto}, function(data) {
-                $("#lb_resultado").html("Meu nome é " + nome + ", nasci em " +  moment(data_nasciemnto).format('DD/MM/YYYY') + " e minha idade é " + data + " anos.");
+                $("#lb_resultado").html("Nome: " + nome + " - Nascido em: " +  moment(data_nasciemnto).format('DD/MM/YYYY') + " - Idade: " + data + "");
             });
         });
     });
